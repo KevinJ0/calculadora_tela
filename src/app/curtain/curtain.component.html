@@ -1,0 +1,47 @@
+<div class="content">
+     
+    <div>
+      <h1>
+        Tamaño de la tela
+      </h1>
+      <mat-button-toggle-group [(ngModel)]="fabricSize" (ngModelChange)="calcCurtain($event)"
+       value=110>
+        <mat-button-toggle value=110>110"</mat-button-toggle>
+        <mat-button-toggle value=60>60"</mat-button-toggle>
+        <mat-button-toggle value=50>50"</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+    <div>
+        <h1>
+          Tipo de tela
+        </h1>
+        <mat-button-toggle-group [(ngModel)]="fabricType" (ngModelChange)="calcCurtain($event)"
+         value=3>
+          <mat-button-toggle value=3>Fina</mat-button-toggle>
+          <mat-button-toggle value=2>Gruesa</mat-button-toggle> 
+        </mat-button-toggle-group>
+      </div>
+
+    <mat-form-field>
+      <mat-label>Alto de la cortina</mat-label>
+      <input [(ngModel)]="height" (ngModelChange)="calcCurtain($event)" type="number" matInput
+        placeholder="Tamaño en pulgadas" value="">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Largo de la cortina</mat-label>
+      <input [(ngModel)]="large" value="{{large}}" (ngModelChange)="calcCurtain($event)" max="110" (blur)="onFocusOutEvent($event)" type="number" matInput
+        placeholder="Tamaño en pulgadas" >
+    </mat-form-field>
+
+
+   <!--  <mat-form-field>  
+      <mat-label>Cantidad</mat-label>
+      <input [(ngModel)]="cantCurtain" (ngModelChange)="calcCurtain($event)" type="number" matInput
+        placeholder="Cantidad de cojines" value="">
+    </mat-form-field> -->
+
+    <h5 class="resulCushion">Necesitas: {{curtainResult}} Yardas</h5>
+  </div>

@@ -1,0 +1,35 @@
+<div class="content">
+     
+    <div>
+      <h1>
+        Tamaño de la tela
+      </h1>
+      <mat-button-toggle-group [(ngModel)]="fabricSize" (ngModelChange)="calcCushion($event)"
+       value=110>
+        <mat-button-toggle value=110>110"</mat-button-toggle>
+        <mat-button-toggle value=60>60"</mat-button-toggle>
+        <mat-button-toggle value=50>50"</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <mat-form-field>
+      <mat-label>Alto del cojín</mat-label>
+      <input [(ngModel)]="height" (ngModelChange)="calcCushion($event)" type="number" matInput
+        placeholder="Tamaño en pulgadas" value="">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Largo del cojín</mat-label>
+      <input [(ngModel)]="large" value="{{large}}" (ngModelChange)="calcCushion($event)" max="110" (blur)="onFocusOutEvent($event)" type="number" matInput
+        placeholder="Tamaño en pulgadas" >
+    </mat-form-field>
+
+
+    <mat-form-field>  
+      <mat-label>Cantidad</mat-label>
+      <input [(ngModel)]="cantCushion" (ngModelChange)="calcCushion($event)" type="number" matInput
+        placeholder="Cantidad de cojines" value="">
+    </mat-form-field>
+
+    <h5 class="resulCushion">Necesitas: {{cushionResult}} Yardas</h5>
+  </div>
